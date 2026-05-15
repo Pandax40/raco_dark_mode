@@ -10,7 +10,9 @@ This fork keeps the original GPL-3.0-only license and credits the original autho
 
 ## Building
 
-You will need `node` and `pnpm` to build this project. Build with:
+You can either download the compiled CSS from the latest GitHub release or build it locally.
+
+To build it yourself, you will need `node` and `pnpm`:
 
 ```sh
 pnpm install
@@ -31,7 +33,9 @@ The recommended installer is [Stylus](https://github.com/openstyles/stylus), whi
    - [Chrome Web Store](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) for Chrome and most Chromium-based browsers.
    - [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/styl-us/) for Firefox.
 2. Get the generated UserCSS file:
-   - If you cloned this repository, run `pnpm install` and `pnpm build`, then use the generated `main.user.css` file in the project root.
+   - Recommended: open the [latest release](https://github.com/Pandax40/raco_dark_mode/releases/latest) and download `main.user.css`.
+   - Direct download: <https://github.com/Pandax40/raco_dark_mode/releases/latest/download/main.user.css>
+   - If you cloned this repository and want to compile it yourself, run `pnpm install` and `pnpm build`, then use the generated `main.user.css` file in the project root.
    - If you are installing from a GitHub fork, open the raw `main.user.css` URL, not the normal GitHub preview page. The URL should look like:
 
      ```text
@@ -63,6 +67,43 @@ If you publish this under your own GitHub fork, update `package.json`:
 ```
 
 Then run `pnpm build` so `main.user.css` contains the updated metadata.
+
+## Releasing
+
+GitHub Actions can build and publish a release from `main`.
+
+To publish a new release:
+
+1. Go to **Actions > Release > Run workflow**.
+2. Select the `main` branch.
+3. Enter the release version without the leading `v`, for example `3.0.1`.
+4. Run the workflow.
+
+You can also start it from the GitHub CLI:
+
+```sh
+gh workflow run Release --ref main -f version=3.0.1
+```
+
+Release versions must use this exact format:
+
+```text
+MAJOR.MINOR.PATCH
+```
+
+Examples: `3.0.0`, `3.0.1`, `4.1.0`.
+
+The workflow will:
+
+- update `package.json` if its `"version"` does not match the requested release,
+- skip the version commit if `package.json` is already correct,
+- create and push the matching `vMAJOR.MINOR.PATCH` tag, for example `v3.0.1`,
+- build both CSS outputs,
+- publish a GitHub release with `main.user.css` and `main.css`.
+
+Do not create the release tag manually for normal releases. The workflow creates it after the version commit, so the tag points to the exact source version used for the release.
+
+If the release step fails with a permission error, check the repository setting under **Settings > Actions > General > Workflow permissions** and allow GitHub Actions to create releases with write access. If the version commit cannot be pushed, check whether branch protection rules for `main` block commits made by GitHub Actions.
 
 ## Credits
 

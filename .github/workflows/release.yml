@@ -1,0 +1,116 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version without leading v, for example 3.0.1"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate release version
+        id: release
+        shell: bash
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+
+          version="${RELEASE_VERSION}"
+          tag="v${version}"
+
+          if [[ ! "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Invalid release version '${version}'. Use MAJOR.MINOR.PATCH, for example 3.0.1."
+            exit 1
+          fi
+
+          if git ls-remote --exit-code --tags origin "refs/tags/${tag}" > /dev/null 2>&1; then
+            echo "::error::Release tag '${tag}' already exists."
+            exit 1
+          fi
+
+          echo "tag=${tag}" >> "${GITHUB_OUTPUT}"
+          echo "version=${version}" >> "${GITHUB_OUTPUT}"
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Update package version
+        shell: bash
+        env:
+          RELEASE_VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          set -euo pipefail
+
+          node -e "const fs = require('fs'); const path = 'package.json'; const version = process.env.RELEASE_VERSION; const pkg = JSON.parse(fs.readFileSync(path, 'utf8')); if (pkg.version === version) process.exit(0); pkg.version = version; fs.writeFileSync(path, JSON.stringify(pkg, null, 2) + '\n');"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build CSS files
+        run: pnpm build
+
+      - name: Check release assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s main.user.css
+          test -s main.css
+
+      - name: Commit version bump
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- package.json; then
+            echo "package.json already has version ${{ steps.release.outputs.version }}; no version commit needed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json
+          git commit -m "chore(release): ${{ steps.release.outputs.tag }}"
+          git push origin HEAD:main
+
+      - name: Create and push release tag
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git tag "${{ steps.release.outputs.tag }}"
+          git push origin "${{ steps.release.outputs.tag }}"
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.release.outputs.tag }}" \
+            main.user.css \
+            main.css \
+            --verify-tag \
+            --title "el Raco Dark Mode ${{ steps.release.outputs.tag }}" \
+            --generate-notes
