@@ -9,14 +9,16 @@
 @use 'forum' as *;
 @use 'projects' as *;
 
-@include variables.variables;
-@include base;
+@media (prefers-color-scheme: dark) {
+  @include variables.variables;
+  @include base;
 
-.cap { @include cap; }
-@include home;
-@include calendar;
-@include assignment;
-@include lists;
-@include schedule;
-@include forum;
-@include projects;
+  .cap { @include cap; }
+  @include home;
+  @include calendar;
+  @include assignment;
+  @include lists;
+  @include schedule;
+  @include forum;
+  @include projects;
+}
