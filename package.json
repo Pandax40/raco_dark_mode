@@ -1,10 +1,10 @@
 {
   "name": "raco-dark-mode",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "I want to study, not to get blind",
-  "author": "Nara D\u00edaz Vi\u00f1olas <me@rdvdev2.com>, panda",
+  "author": "Nara Díaz Viñolas <me@rdvdev2.com>, panda",
   "contributors": [
-    "Nara D\u00edaz Vi\u00f1olas <me@rdvdev2.com>",
+    "Nara Díaz Viñolas <me@rdvdev2.com>",
     "panda"
   ],
   "license": "GPL-3.0-only",
@@ -18,7 +18,7 @@
     "watch": "gulp watch"
   },
   "userCss": {
-    "name": "el Rac\u00f3 Dark Mode",
+    "name": "el Racó Dark Mode",
     "namespace": "https://github.com/Pandax40",
     "domain": "raco.fib.upc.edu"
   },
