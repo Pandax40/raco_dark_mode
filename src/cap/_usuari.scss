@@ -1,8 +1,8 @@
 @use 'resources' as res;
 
 @mixin usuari {
-    background: black;
-    border: white 2px solid;
+    background: var(--raco-bg-soft);
+    border: var(--raco-border) 2px solid;
     border-radius: 10px;
     bottom: -1px !important;
     
@@ -12,7 +12,7 @@
     }
     
     .nom a, .nom a:visited {
-        color: white;
+        color: var(--raco-text);
     }
     
     .sortir, .sortir:hover {
@@ -21,7 +21,7 @@
         display: flex;
     }
     
-    .sortir a, .sortir a {
+    .sortir a {
         font-size: 0 !important;
         display: inline-block;
         background: res.feather-icon("log-out");

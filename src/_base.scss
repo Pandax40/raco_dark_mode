@@ -1,0 +1,54 @@
+@mixin base {
+    html, body {
+        min-height: 100vh;
+        background: var(--raco-bg) !important;
+        color: var(--raco-text);
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.45;
+    }
+
+    body, input, select, textarea, button {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    #page {
+        flex: 1 0 auto;
+        min-height: 0;
+        color: var(--raco-text);
+        background:
+            radial-gradient(circle at 72% 0%, rgba(85, 214, 167, 0.16), transparent 27rem),
+            radial-gradient(circle at 24% 9rem, rgba(118, 214, 255, 0.10), transparent 26rem),
+            linear-gradient(180deg, #121820 0, var(--raco-bg) 19rem) !important;
+    }
+
+    #footer {
+        flex: 0 0 auto;
+    }
+
+    #page_centered {
+        color: var(--raco-text);
+    }
+
+    a, a:visited {
+        color: var(--raco-link);
+    }
+
+    a:hover {
+        color: var(--raco-link-hover);
+    }
+
+    input, select, textarea {
+        background: var(--raco-bg-soft);
+        border: 1px solid var(--raco-border);
+        color: var(--raco-text);
+    }
+
+    ::selection {
+        background: var(--raco-accent);
+        color: #07110d;
+    }
+}

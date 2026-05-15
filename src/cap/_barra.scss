@@ -14,9 +14,19 @@
 
 @mixin barra {
     ul#links {
-        background: black;
+        background: var(--raco-bg);
         border-radius: 0 0 10px 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
         padding: 0 0.5em;
+
+        a {
+            color: var(--raco-text);
+        }
+
+        a:hover {
+            color: var(--raco-accent-strong);
+            text-decoration: none;
+        }
     }
 
     div.rightlinks {
@@ -24,9 +34,10 @@
         justify-content: right;
         align-items: center;
         width: auto;
-        background: black;
+        background: var(--raco-bg);
         padding: 0;
         border-radius: 0 0 10px 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
     }
 
     ul#idiomes {
@@ -59,7 +70,7 @@
 
     ul#eines {
         background: transparent;
-        border-left: 0.2em var(--background-accent) solid;
+        border-left: 0.2em var(--raco-border) solid;
         margin-left: 0;
         padding: 0;
 

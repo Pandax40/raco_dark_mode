@@ -1,0 +1,93 @@
+@mixin calendar {
+    .calendari {
+        position: relative;
+    }
+
+    .calendari a.anterior, .calendari a.seguent {
+        color: var(--raco-muted);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .calendari a.anterior:hover, .calendari a.seguent:hover {
+        color: var(--raco-link-hover);
+    }
+
+    table.calendariMes {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--raco-bg-soft);
+        border: 1px solid var(--raco-border-soft);
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .calendariMes td {
+        background: transparent !important;
+        border: 1px solid var(--raco-border-soft);
+        color: var(--raco-muted);
+        text-align: center;
+        padding: 0.32rem;
+    }
+
+    .calendariMes .calendariNomMes {
+        color: var(--raco-text);
+        background: var(--raco-surface-2) !important;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    .calendariMes .calendariDiaSetmana {
+        color: var(--raco-subtle);
+        background: var(--raco-surface) !important;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    .calendariMes .festa {
+        color: var(--raco-danger);
+        background: rgba(255, 111, 143, 0.08) !important;
+    }
+
+    .calendariMes .coses {
+        background: rgba(118, 214, 255, 0.12) !important;
+    }
+
+    .calendariMes .coses a {
+        color: var(--raco-link-hover);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .calendariMes .avui {
+        background: var(--raco-accent) !important;
+        color: #07110d !important;
+        font-weight: 800;
+    }
+
+    .avui_tens, .events {
+        margin-top: 0.9rem;
+        border-top: 1px solid var(--raco-border-soft);
+        padding-top: 0.8rem;
+    }
+
+    .majus {
+        color: var(--raco-warning) !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 0 !important;
+        text-transform: uppercase;
+    }
+
+    .events li.futur::before {
+        left: 0.25rem;
+        top: 0.72em;
+        width: 0;
+        height: 0;
+        border-top: 0.24rem solid transparent;
+        border-bottom: 0.24rem solid transparent;
+        border-left: 0.38rem solid var(--raco-subtle);
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+}

@@ -1,17 +1,48 @@
 @mixin nav {
     > li {
-        background: var(--background-color);
-        border: 2px white solid;
+        background: var(--raco-bg-soft);
+        border: 2px var(--raco-border) solid;
         border-left: none;
         border-radius: 0;
 
         &:first-child {
-            display: none;
-        }
-        
-        &:nth-child(2) {
+            display: block !important;
+            border-left: 2px var(--raco-border) solid;
             border-radius: 10px 0 0 10px;
-            border-left: 2px white solid;
+
+            a {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 2.35rem !important;
+                min-width: 2.35rem;
+                min-height: 1.55rem !important;
+                padding: 0 !important;
+                background: transparent !important;
+                color: transparent !important;
+                position: relative;
+                overflow: hidden;
+            }
+
+            a::before {
+                content: "";
+                display: block;
+                width: 1rem;
+                height: 1rem;
+                background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23e7edf2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpath d="m3 11 9-8 9 8"/%3E%3Cpath d="M5 10v10h14V10"/%3E%3Cpath d="M10 20v-6h4v6"/%3E%3C/svg%3E') center / contain no-repeat;
+            }
+
+            a::after {
+                content: none;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        &:nth-child(2) {
+            border-radius: 0;
         }
         
         &:last-child {
@@ -19,34 +50,41 @@
         }
 
         &.sel {
-            background: white;
+            background: var(--raco-accent);
+            border-color: var(--raco-accent);
+        }
+
+        &:first-child.sel {
+            background: var(--raco-surface-2);
+            border-color: var(--raco-border);
         }
         
         a {
-            color: white;
+            color: var(--raco-text);
         }
         
         &.hover {
-            background: white;
-            border-bottom: 2px white solid;
+            background: var(--raco-surface-2);
+            border-bottom: 2px var(--raco-accent) solid;
         }
         
         &.hover a, &.sel a {
-            color: black;
+            color: #07110d;
         }
     }
     
     ul.subnav {
         padding-left: 0;
-        border: 2px white solid;
+        border: 2px var(--raco-border) solid;
         border-radius: 10px;
-        background: black;
+        background: var(--raco-surface);
         top: 2.5em !important;
+        box-shadow: var(--raco-shadow);
         
         li {
             border-radius: 0;
             background: none;
-            border-bottom: 2px white solid;
+            border-bottom: 1px var(--raco-border-soft) solid;
         }
         
         li:last-child {
@@ -54,17 +92,17 @@
         }
         
         li a {
-            color: white;
+            color: var(--raco-text);
             background: none;
             padding: 0.5em;
         }
         
         li:hover {
-            background: white;
+            background: var(--raco-surface-2);
         }
         
         li:hover a {
-            color: black;
+            color: var(--raco-link-hover);
             text-decoration: none;
         }
     }

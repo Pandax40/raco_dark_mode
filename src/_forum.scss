@@ -1,0 +1,214 @@
+@mixin forum {
+    #forum {
+        color: var(--raco-text) !important;
+    }
+
+    #forum .eines {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.35rem;
+        color: var(--raco-muted) !important;
+        margin-bottom: 0.75rem;
+        text-align: right;
+    }
+
+    #forum .cos_forum > .eines {
+        margin-top: -0.25rem;
+        margin-bottom: 1.4rem;
+    }
+
+    #forum .eines br {
+        display: none;
+    }
+
+    #forum .eines img {
+        flex: 0 0 auto;
+    }
+
+    #forum .eines a {
+        white-space: nowrap;
+    }
+
+    #forum .eines a,
+    #forum a.mainmenu,
+    #forum a.forumlink,
+    #forum .forumlink a,
+    #forum a.path_links {
+        color: var(--raco-link) !important;
+        text-decoration: none;
+    }
+
+    #forum .eines a:hover,
+    #forum a.mainmenu:hover,
+    #forum a.forumlink:hover,
+    #forum .forumlink a:hover,
+    #forum a.path_links:hover {
+        color: var(--raco-link-hover) !important;
+        text-decoration: underline;
+    }
+
+    #forum .forumline {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--raco-bg-soft) !important;
+        border: 1px solid var(--raco-border-soft) !important;
+        color: var(--raco-text) !important;
+    }
+
+    #forum .cos_forum > table:not(.forumline),
+    #forum .cos_forum > table:not(.forumline) td {
+        background: transparent !important;
+        border-color: var(--raco-border-soft) !important;
+        color: var(--raco-text) !important;
+    }
+
+    #forum a.maintitle {
+        color: var(--raco-text) !important;
+        font-size: 1.25rem;
+        font-weight: 800;
+        text-decoration: none;
+    }
+
+    #forum .fitxa,
+    #forum .fitxa > div,
+    #forum .fitxa p {
+        background: rgba(118, 214, 255, 0.06) !important;
+        border-color: var(--raco-border-soft) !important;
+        color: var(--raco-muted) !important;
+    }
+
+    #forum .fitxa {
+        border: 1px solid var(--raco-border-soft) !important;
+        border-radius: 6px !important;
+        margin: 0.5rem 0 0.75rem;
+        overflow: hidden;
+    }
+
+    #forum .fitxa p {
+        margin: 0.45rem 0;
+    }
+
+    #forum .forumline th,
+    #forum .thcornerl,
+    #forum .thtop,
+    #forum .thcornerr {
+        background: var(--raco-surface-2) !important;
+        border: 1px solid var(--raco-border-soft) !important;
+        color: var(--raco-text) !important;
+        font-size: 0.75rem;
+        letter-spacing: 0;
+        padding: 0.55rem 0.6rem;
+        text-transform: uppercase;
+    }
+
+    #forum .catleft,
+    #forum .catright {
+        background: rgba(118, 214, 255, 0.1) !important;
+        border: 1px solid var(--raco-border-soft) !important;
+        color: var(--raco-accent-strong) !important;
+        height: 28px;
+        padding: 0.35rem 0.65rem;
+    }
+
+    #forum .catleft a,
+    #forum .catright a {
+        color: var(--raco-accent-strong) !important;
+        font-weight: 800;
+    }
+
+    #forum .row1,
+    #forum .row2,
+    #forum .row3,
+    #forum .zebra .row1,
+    #forum .zebra .row2,
+    #forum .zebra .row3,
+    #forum .forumline td {
+        background: rgba(231, 237, 242, 0.035) !important;
+        border: 1px solid var(--raco-border-soft) !important;
+        color: var(--raco-text) !important;
+        padding: 0.35rem 0.7rem;
+    }
+
+    #forum .moderation_highlight,
+    #forum .bg_small_yellow,
+    #forum .bg_small_yellow .row1,
+    #forum .bg_small_yellow .row2,
+    #forum .bg_small_yellow .row3,
+    #forum .forumline tr.bg_small_yellow td {
+        background-color: transparent !important;
+    }
+
+    #forum .zebra .row1,
+    #forum .zebra .row2,
+    #forum .zebra .row3,
+    #forum .forumline tr.zebra td:not(.catleft):not(.catright) {
+        background: rgba(231, 237, 242, 0.055) !important;
+    }
+
+    #forum .forumlink,
+    #forum .forumlink a,
+    #forum .topictitle,
+    #forum .topictitle a,
+    #forum .name a,
+    #forum a.nav {
+        color: var(--raco-link-hover) !important;
+        font-weight: 800;
+    }
+
+    #forum .forumline td,
+    #forum .forumline td span,
+    #forum .forumline td p,
+    #forum .forumline td b,
+    #forum .forumline td strong,
+    #forum .postbody,
+    #forum .postinfo {
+        color: var(--raco-text) !important;
+    }
+
+    #forum .gen,
+    #forum .genmed,
+    #forum .gensmall,
+    #forum .postdetails {
+        color: var(--raco-muted) !important;
+    }
+
+    #forum .postdetails a,
+    #forum .gensmall a,
+    #forum .nav a {
+        color: var(--raco-link) !important;
+    }
+
+    #forum blockquote,
+    #forum .quote,
+    #forum .code,
+    #forum .quotebody,
+    #forum .quotetitle {
+        background: rgba(118, 214, 255, 0.08) !important;
+        border: 1px solid var(--raco-border) !important;
+        color: var(--raco-text) !important;
+    }
+
+    #forum blockquote,
+    #forum .quote,
+    #forum .quotebody,
+    #forum .code {
+        border-radius: 6px;
+        padding: 0.6rem 0.7rem !important;
+    }
+
+    #forum .quotetitle {
+        border-bottom: 0 !important;
+        color: var(--raco-muted) !important;
+        font-weight: 800;
+    }
+
+    #forum img {
+        filter: saturate(0.85) brightness(1.15);
+    }
+
+    #forum .forumline img[src*="folder"],
+    #forum .forumline img[src*="icon_latest_reply"] {
+        filter: saturate(0.7) brightness(1.25);
+    }
+}

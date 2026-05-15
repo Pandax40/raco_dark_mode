@@ -1,6 +1,26 @@
 @mixin variables {
-    * {
-        --background-accent: hsl(250, 95%, 20%);
-        --background-color: black;
+    :root {
+        color-scheme: dark;
+        --raco-bg: #0b0d10;
+        --raco-bg-soft: #11161a;
+        --raco-surface: #171d22;
+        --raco-surface-2: #20272e;
+        --raco-surface-3: #29323a;
+        --raco-border: #384550;
+        --raco-border-soft: #28323a;
+        --raco-text: #e7edf2;
+        --raco-muted: #a7b2bd;
+        --raco-subtle: #778491;
+        --raco-link: #76d6ff;
+        --raco-link-hover: #a9e8ff;
+        --raco-accent: #55d6a7;
+        --raco-accent-strong: #7ee0bc;
+        --raco-warning: #f4c95d;
+        --raco-danger: #ff6f8f;
+        --raco-info: #8ec8ff;
+        --raco-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+        --raco-radius: 8px;
+        --background-accent: #17231f;
+        --background-color: var(--raco-bg);
     }
 }

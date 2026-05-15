@@ -1,0 +1,293 @@
+@mixin projects {
+    body:has(.sidebar_left a[href*="/projectes/"]) {
+        .dintre_contingut > h3,
+        .dintre_contingut h2 + p,
+        .dintre_contingut > p:first-of-type {
+            color: var(--raco-accent-strong) !important;
+            font-weight: 800;
+        }
+
+        .dintre_contingut > h4 {
+            color: var(--raco-text) !important;
+            font-size: 1rem;
+            margin: 1.1rem 0 0.45rem;
+        }
+
+        .dintre_contingut div > h4 {
+            color: var(--raco-accent-strong) !important;
+            font-size: 1rem;
+            margin: 0.95rem 0 0.45rem;
+        }
+
+        .dintre_contingut .form label,
+        .dintre_contingut .form .label {
+            color: var(--raco-muted) !important;
+            font-weight: 800;
+        }
+
+        .dintre_contingut .form select {
+            box-sizing: border-box;
+            background: var(--raco-bg-soft) !important;
+            border: 1px solid var(--raco-border) !important;
+            color: var(--raco-text) !important;
+            min-height: 1.8rem;
+        }
+
+        .dintre_contingut #ofertes_actuals {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--raco-bg-soft) !important;
+            border: 1px solid var(--raco-border-soft) !important;
+            color: var(--raco-text) !important;
+        }
+
+        .dintre_contingut #ofertes_actuals th {
+            background: var(--raco-surface-2) !important;
+            border: 1px solid var(--raco-border-soft) !important;
+            color: var(--raco-text) !important;
+            font-size: 0.75rem;
+            letter-spacing: 0;
+            padding: 0.55rem 0.6rem;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .dintre_contingut #ofertes_actuals td {
+            background: rgba(231, 237, 242, 0.035) !important;
+            border: 1px solid var(--raco-border-soft) !important;
+            color: var(--raco-text) !important;
+            padding: 0.55rem 0.6rem;
+            vertical-align: top;
+        }
+
+        .dintre_contingut #ofertes_actuals tbody tr:nth-child(even) td {
+            background: rgba(231, 237, 242, 0.065) !important;
+        }
+
+        .dintre_contingut #ofertes_actuals td:nth-child(n+2) {
+            color: var(--raco-muted) !important;
+        }
+
+        .dintre_contingut #ofertes_actuals a {
+            color: var(--raco-link-hover) !important;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .dintre_contingut #ofertes_actuals a:hover {
+            color: var(--raco-accent-strong) !important;
+            text-decoration: underline;
+        }
+
+        .dintre_contingut #ofertes_actuals .especialitats {
+            color: var(--raco-muted) !important;
+            padding-left: 0;
+        }
+
+        .dintre_contingut #ofertes_actuals .especialitats li {
+            color: var(--raco-muted) !important;
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+        }
+
+        .dintre_contingut #ofertes_actuals tfoot td {
+            background: var(--raco-surface) !important;
+            height: 0.35rem;
+            padding: 0 !important;
+        }
+
+        .dintre_contingut > table:not(.horari):not(.calendariMes),
+        .dintre_contingut > div + table:not(.horari):not(.calendariMes) {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--raco-bg-soft) !important;
+            border: 1px solid var(--raco-border-soft) !important;
+            color: var(--raco-text) !important;
+            margin-top: 0.8rem;
+        }
+
+        .dintre_contingut > table:not(.horari):not(.calendariMes) th,
+        .dintre_contingut > div + table:not(.horari):not(.calendariMes) th {
+            background: var(--raco-surface-2) !important;
+            border: 1px solid var(--raco-border-soft) !important;
+            color: var(--raco-text) !important;
+            font-size: 0.75rem;
+            letter-spacing: 0;
+            padding: 0.55rem 0.6rem;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .dintre_contingut > table:not(.horari):not(.calendariMes) td,
+        .dintre_contingut > div + table:not(.horari):not(.calendariMes) td {
+            background: rgba(231, 237, 242, 0.035) !important;
+            border: 1px solid var(--raco-border-soft) !important;
+            color: var(--raco-text) !important;
+            padding: 0.55rem 0.6rem;
+            vertical-align: top;
+        }
+
+        .dintre_contingut > table:not(.horari):not(.calendariMes) tbody tr:nth-child(even) td,
+        .dintre_contingut > div + table:not(.horari):not(.calendariMes) tbody tr:nth-child(even) td {
+            background: rgba(231, 237, 242, 0.065) !important;
+        }
+
+        .dintre_contingut > table:not(.horari):not(.calendariMes) td:nth-child(n+2),
+        .dintre_contingut > div + table:not(.horari):not(.calendariMes) td:nth-child(n+2) {
+            color: var(--raco-muted) !important;
+        }
+
+        .dintre_contingut > table:not(.horari):not(.calendariMes) a,
+        .dintre_contingut > div + table:not(.horari):not(.calendariMes) a {
+            color: var(--raco-link-hover) !important;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .dintre_contingut > table:not(.horari):not(.calendariMes) a:hover,
+        .dintre_contingut > div + table:not(.horari):not(.calendariMes) a:hover {
+            color: var(--raco-accent-strong) !important;
+            text-decoration: underline;
+        }
+
+        .dintre_contingut .fitxa {
+            background: linear-gradient(180deg, rgba(231, 237, 242, 0.055), rgba(231, 237, 242, 0.035)) !important;
+            border: 1px solid var(--raco-border-soft) !important;
+            border-radius: 6px !important;
+            color: var(--raco-text) !important;
+            margin: 0.65rem 0 0.9rem;
+            overflow: hidden;
+            padding: 0 !important;
+        }
+
+        .dintre_contingut .fitxa > div[style*="font-size: 1px"] {
+            display: none;
+        }
+
+        .dintre_contingut .fitxa > div {
+            background: transparent !important;
+            border-color: transparent !important;
+            color: var(--raco-text) !important;
+            padding: 0.85rem !important;
+        }
+
+        .dintre_contingut .fitxa dl {
+            border-bottom: 1px solid var(--raco-border-soft) !important;
+            color: var(--raco-text) !important;
+            margin: 0;
+            padding: 0.55rem 0;
+        }
+
+        .dintre_contingut .fitxa dl:last-child {
+            border-bottom: 0 !important;
+        }
+
+        .dintre_contingut .fitxa dt {
+            color: var(--raco-muted) !important;
+            font-weight: 800;
+        }
+
+        .dintre_contingut .fitxa dd,
+        .dintre_contingut .fitxa p,
+        .dintre_contingut .fitxa li,
+        .dintre_contingut .fitxa span,
+        .dintre_contingut .fitxa .dni,
+        .dintre_contingut .fitxa .filesize,
+        .dintre_contingut .fitxa .filetype {
+            color: var(--raco-text) !important;
+        }
+
+        .dintre_contingut .fitxa h3,
+        .dintre_contingut .fitxa h4 {
+            color: var(--raco-text) !important;
+            margin-top: 0;
+        }
+
+        .dintre_contingut .fitxa a {
+            color: var(--raco-link-hover) !important;
+            font-weight: 700;
+        }
+
+        .dintre_contingut .fitxa .embed-profile {
+            color: var(--raco-text) !important;
+            margin-bottom: 0.35rem;
+        }
+
+        .dintre_contingut .fitxa .embed-profile .foto,
+        .dintre_contingut .fitxa img.foto {
+            background: var(--raco-surface-2);
+            border: 1px solid var(--raco-border);
+            border-radius: 4px;
+            padding: 0.12rem;
+        }
+
+        .dintre_contingut .fitxa img {
+            max-width: none;
+            max-height: none;
+        }
+
+        .dintre_contingut .fitxa .botons_form {
+            background: rgba(7, 17, 13, 0.14) !important;
+        }
+
+        .dintre_contingut .fitxa:has(img[src*="knob_graphite"]),
+        .dintre_contingut .fitxa:has(img[src*="grey"]),
+        .dintre_contingut .fitxa:has(img[src*="gray"]),
+        .dintre_contingut .fitxa:has(img[src*="pendent"]),
+        .dintre_contingut .fitxa:has(img[src*="disabled"]) {
+            background: linear-gradient(180deg, rgba(231, 237, 242, 0.13), rgba(231, 237, 242, 0.07)) !important;
+            border-color: rgba(231, 237, 242, 0.24) !important;
+        }
+
+        .dintre_contingut .fitxa.actual,
+        .dintre_contingut .fitxa.formulari.actual,
+        .dintre_contingut .fitxa:has(img[src*="clock"]),
+        .dintre_contingut .fitxa:has(img[src*="pending"]),
+        .dintre_contingut .fitxa:has(img[src*="blue"]),
+        .dintre_contingut .fitxa:has(img[src*="info"]) {
+            background: linear-gradient(180deg, rgba(118, 214, 255, 0.42), rgba(118, 214, 255, 0.24)) !important;
+            border-color: rgba(118, 214, 255, 0.58) !important;
+            color: var(--raco-text) !important;
+        }
+
+        .dintre_contingut .fitxa.actual *,
+        .dintre_contingut .fitxa.formulari.actual *,
+        .dintre_contingut .fitxa:has(img[src*="blue"]) * {
+            color: var(--raco-text) !important;
+        }
+
+        .dintre_contingut .fitxa.actual a,
+        .dintre_contingut .fitxa.formulari.actual a,
+        .dintre_contingut .fitxa:has(img[src*="blue"]) a {
+            color: #c9f1ff !important;
+        }
+
+        .dintre_contingut .fitxa:has(img[src*="knob_green"]),
+        .dintre_contingut .fitxa:has(img[src*="tick"]),
+        .dintre_contingut .fitxa:has(img[src*="ok"]),
+        .dintre_contingut .fitxa:has(img[src*="accept"]),
+        .dintre_contingut .fitxa:has(img[src*="green"]) {
+            background: linear-gradient(180deg, rgba(190, 234, 122, 0.5), rgba(143, 199, 72, 0.32)) !important;
+            border-color: rgba(158, 220, 80, 0.68) !important;
+            color: var(--raco-text) !important;
+        }
+
+        .dintre_contingut .fitxa:has(img[src*="knob_green"]) *,
+        .dintre_contingut .fitxa:has(img[src*="green"]) * {
+            color: var(--raco-text) !important;
+        }
+
+        .dintre_contingut .fitxa:has(img[src*="knob_green"]) a,
+        .dintre_contingut .fitxa:has(img[src*="green"]) a {
+            color: #d8ffd9 !important;
+        }
+
+        .dintre_contingut .formulari.fitxa h4 img,
+        .dintre_contingut .fitxa img[src*="knob_"] {
+            float: right;
+            filter: saturate(0.95) brightness(1.02);
+            margin-left: 0.75rem;
+        }
+    }
+}

@@ -1,10 +1,22 @@
 @use 'variables';
+@use 'base' as *;
 @use 'cap' as *;
+@use 'home' as *;
+@use 'calendar' as *;
+@use 'assignment' as *;
+@use 'lists' as *;
+@use 'schedule' as *;
+@use 'forum' as *;
+@use 'projects' as *;
 
 @include variables.variables;
-
-#page {
-    background: linear-gradient(var(--background-accent) 0%, var(--background-color) 175px);
-}
+@include base;
 
 .cap { @include cap; }
+@include home;
+@include calendar;
+@include assignment;
+@include lists;
+@include schedule;
+@include forum;
+@include projects;

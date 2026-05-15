@@ -7,9 +7,9 @@
     }
     
     #tipus_cerca, #camp_cerca, button {
-        background: black;
-        color: white;
-        border: 2px solid white;
+        background: var(--raco-bg-soft);
+        color: var(--raco-text);
+        border: 2px solid var(--raco-border);
     }
     
     #tipus_cerca {
@@ -23,6 +23,12 @@
         border-right: none;
         padding: 0 0.5em;
         min-width: 0;
+
+        &:focus {
+            outline: none;
+            border-color: var(--raco-accent);
+            box-shadow: 0 0 0 0.18rem rgba(85, 214, 167, 0.18);
+        }
     }
     
     button {
@@ -43,6 +49,11 @@
             position: static;
             width: 1.5em;
             height: 1.5em;
+        }
+
+        &:hover {
+            background: var(--raco-surface-2);
+            border-color: var(--raco-accent);
         }
         
         span .ui-icon, span .ui-button-text {

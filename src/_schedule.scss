@@ -1,0 +1,89 @@
+@mixin schedule {
+    table.horari {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--raco-bg-soft) !important;
+        border: 1px solid var(--raco-border-soft);
+        color: var(--raco-text);
+    }
+
+    table.horari thead th {
+        background: var(--raco-surface-2) !important;
+        border: 1px solid var(--raco-border-soft) !important;
+        color: var(--raco-text) !important;
+        padding: 0.45rem 0.35rem;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+    }
+
+    table.horari tbody th {
+        background: var(--raco-surface) !important;
+        border: 1px solid var(--raco-border-soft) !important;
+        color: var(--raco-muted) !important;
+        font-weight: 700;
+        text-align: right;
+        padding: 0.35rem 0.45rem;
+    }
+
+    table.horari td.dia {
+        background: rgba(231, 237, 242, 0.035) !important;
+        border: 1px solid var(--raco-border-soft) !important;
+        min-height: 3.25rem;
+    }
+
+    table.horari tbody tr:nth-child(even) td.dia {
+        background: rgba(231, 237, 242, 0.07) !important;
+    }
+
+    table.horari tfoot td {
+        background: var(--raco-surface) !important;
+        border: 1px solid var(--raco-border-soft) !important;
+        height: 0.45rem;
+        padding: 0 !important;
+    }
+
+    table.horari .classe {
+        background-image: none !important;
+        border-radius: 4px;
+        color: #07110d !important;
+        font-weight: 800;
+        line-height: 1.25;
+        padding: 0.35rem 0.45rem;
+        box-shadow: none;
+    }
+
+    table.horari .classe.blau {
+        background-color: #9bd6f4 !important;
+        border: 1px solid #5caad1 !important;
+    }
+
+    table.horari .classe.verd {
+        background-color: #9de6bc !important;
+        border: 1px solid #5fb77f !important;
+    }
+
+    table.horari .classe.rosa {
+        background-color: #ff9fc8 !important;
+        border: 1px solid #d46b9c !important;
+    }
+
+    table.horari .classe.taronja {
+        background-color: #ffc177 !important;
+        border: 1px solid #d88d3f !important;
+    }
+
+    table.horari .classe.lila {
+        background-color: #cba8ff !important;
+        border: 1px solid #9270d0 !important;
+    }
+
+    table.horari .classe.groc {
+        background-color: #f4df82 !important;
+        border: 1px solid #c8ad3f !important;
+    }
+
+    table.horari .classe.gris {
+        background-color: #aab4bd !important;
+        border: 1px solid #7c8790 !important;
+    }
+}
